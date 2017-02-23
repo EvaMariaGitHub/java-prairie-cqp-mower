@@ -36,12 +36,9 @@ public class TourDeControl {
                         System.out.println("erreur sur les dimensions de la surface");
                         return false;
                     }
-              
-
-                } else if (i%2 != 0) { // on traite la position initiale
+                  } else if (i%2 != 0) { // on traite la position initiale
                         int x = Integer.parseInt(line.substring(0,1));
                         int y = Integer.parseInt(line.substring(1,2));
-
                         if (x + y >= 0 &&  x<= max.getX() && y<=max.getY()) {
                             String cardinal = extractCardinal(line);
                             if (cardinal !=null) {
@@ -66,7 +63,6 @@ public class TourDeControl {
         }
          mowersInAction();
          return true;
-
     }
 
     private String extractCardinal(String line) {
