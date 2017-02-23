@@ -32,19 +32,20 @@ public class Mower {
 
     public Position turn(int angle){
         String cardinal = position.getCardinal();
-        int newDegree = ((COMPASS.getDegree(cardinal) + angle) % 360 + 360)%360;
+        int newDegree = ((COMPASS.getDegree(cardinal)+angle) % 360);
         position.setCardinal(COMPASS.getName(newDegree));
         return position;
     }
 
     public Position forward() {
-        Point newSquare = addPoint(position.getSquare(), COMPASS.getPoint(position.getCardinal()));
-        if (newSquare.getX()+newSquare.getY()>0 && !maxPoint(newSquare, max).equals(newSquare)){
-          position.setSquare(newSquare);
-        }
+        Point newSquare = Point.addPoint(position.getSquare(), COMPASS.getPoint(position.getCardinal()));
+        if (notOut(newSquare)) position.setSquare(newSquare);
         return position;
     }
 
-    private Point addPoint(Point a, Point b){return Point.addPoint(a,b);}
-    private Point maxPoint(Point a, Point b){return Point.maxPoint(a,b);}
+    private boolean notOut(Point square) {
+        return (square.getX()+square.getY() >=0 && square.getX()<=max.getX() && square.getY()<=max.getY());
+    }
+
+    //private Point addPoint(Point a, Point b){return Point.addPoint(a,b);}
 }

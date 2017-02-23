@@ -26,11 +26,9 @@ public enum Compass{
         return  null; // à voir
     }
 
-    public int getDegree(String cardinal){return valueOf(cardinal).degree;}
+    public int getDegree(String cardinal){return ((valueOf(cardinal).degree+360));}
 
-    public Point getPoint(String cardinal){
-        return valueOf(cardinal).point;
-    }
+    public Point getPoint(String cardinal) {return valueOf(cardinal).point;}
 
-    }
+}
 

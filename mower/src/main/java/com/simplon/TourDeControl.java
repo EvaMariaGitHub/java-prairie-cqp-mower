@@ -90,6 +90,7 @@ public class TourDeControl {
     {
         TourDeControl tDC = new TourDeControl("./src/main/java/com/simplon/mowers.txt");
         tDC.start();
+        System.out.println((-90+360)%(360));
 
     }
 }
