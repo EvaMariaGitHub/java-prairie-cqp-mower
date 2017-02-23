@@ -16,12 +16,6 @@ public class Point {
        return new Point(a.getX() + b.getX(), a.getY()+b.getY());
     }
 
-    public static Point maxPoint(Point a, Point b) {
-        if ((a.getX() > b.getX()) || (a.getY() > b.getY()))
-            return a;
-        return b;
-    }
-
     public int getX() {return x;}
 
     public int getY() {return y;}
