@@ -33,9 +33,7 @@ public class Mower {
     }
 
     public Position turn(int angle){
-        String cardinal = position.getCardinal();
-        int newAngle = (COMPASS.getAngle(cardinal)+angle) % 360;
-        position.setCardinal(COMPASS.getCardinal(newAngle));
+        position.setCardinal(COMPASS.getNewcardinal(position.getCardinal(), angle));
         return position;
     }
 

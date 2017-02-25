@@ -19,17 +19,20 @@ public enum Compass{
         this.moveY = moveY;
     }
 
-    public String getCardinal(int angle){
-       for (Compass c : values()){
-           if (c.angle == angle){
-              return c.name();
-           }
-        }
-        return  null; // à voir
+    public String getNewcardinal(String oldCardinal, int angle){
+        int newAngle = (valueOf(oldCardinal).angle + angle + 360)%360;
+        return (getCardinal(newAngle));
     }
 
-    public int getAngle(String cardinal){return ((valueOf(cardinal).angle +360));}
     public int getMoveX(String cardinal) {return valueOf(cardinal).moveX;}
     public int getMoveY(String cardinal) {return valueOf(cardinal).moveY;}
+
+    private String getCardinal(int angle){
+        for (Compass c : values()){
+            if (c.angle == angle){
+                return c.name();
+            }
+        } return  null; // à voir
+    }
 }
 
