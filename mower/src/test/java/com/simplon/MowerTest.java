@@ -2,61 +2,60 @@ package com.simplon;
 
 import org.junit.Test;
 
+import java.awt.*;
+
 import static org.junit.Assert.*;
 
-/**
- * Created by alonso on 18/02/17.
- */
+
 public class MowerTest {
-  /*  Surface surface = new Surface(5,5);
+    Point max = new Point(5,5);
 
     @Test
     public void leftBySequence()  {
         //set
-
-        Mower mower = new Mower(new Position(1,2,"N"),"LL",surface);
+        Mower mower = new Mower(new Position(new Point(1,2),"N"),"LL",max);
         //test
             Position result = mower.readSequence();
         //assert
             assertTrue((result.getCardinal()).equals("S"));
-            assertTrue(result.getX() == 1);
-            assertTrue(result.getY() == 2);
+            assertTrue(result.getSquare().getX() == 1);
+            assertTrue(result.getSquare().getY() == 2);
     }
 
     @Test
     public void rightBySequence()  {
         //set
-        Mower mower = new Mower(new Position(1,2,"N"),"RRR",surface);
+        Mower mower = new Mower(new Position(new Point(1,2),"N"),"RRR",max);
         //test
         Position result = mower.readSequence();
         //assert
         assertTrue((result.getCardinal()).equals("W"));
-        assertTrue(result.getX() == 1);
-        assertTrue(result.getY() == 2);
+        assertTrue(result.getSquare().getX() == 1);
+        assertTrue(result.getSquare().getY() == 2);
     }
 
     @Test
     public void leftByTurn()  {
         //set
-        Mower mower = new Mower(new Position(1,2,"S"),"",surface);
+        Mower mower = new Mower(new Position(new Point(1,2),"S"),"",max);
         //test
         Position result = mower.turn(Mower.LEFT);
         //assert
         assertTrue((result.getCardinal()).equals("E"));
-        assertTrue(result.getX() == 1);
-        assertTrue(result.getY() == 2);
+        assertTrue(result.getSquare().getX() == 1);
+        assertTrue(result.getSquare().getY() == 2);
     }
 
     @Test
     public void rightByTurn()  {
         //set
-        Mower mower = new Mower(new Position(1,2,"S"),"RRR",surface);
+        Mower mower = new Mower(new Position(new Point(1,2),"S"),"RRR",max);
         //test
         Position result = mower.turn(Mower.RIGHT);
         //assert
         assertTrue((result.getCardinal()).equals("W"));
-        assertTrue(result.getX() == 1);
-        assertTrue(result.getY() == 2);
+        assertTrue(result.getSquare().getX() == 1);
+        assertTrue(result.getSquare().getY() == 2);
     }
 
 
@@ -64,13 +63,13 @@ public class MowerTest {
     @Test
     public void forwardBySequence() {
         //set
-        Mower mower = new Mower(new Position(1,2,"S"),"F",surface);
+        Mower mower = new Mower(new Position(new Point(1,2),"S"),"F",max);
         //test
         Position result = mower.readSequence();
         //assert
         assertTrue((result.getCardinal()).equals("S"));
-        assertTrue(result.getX() == 1);
-        assertTrue(result.getY() == 1);
+        assertTrue(result.getSquare().getX() == 1);
+        assertTrue(result.getSquare().getY() == 1);
 
 
     }
@@ -78,26 +77,26 @@ public class MowerTest {
     @Test
     public void forward()  {
         //set
-        Mower mower = new Mower(new Position(1,2,"S"),"F",surface);
+        Mower mower = new Mower(new Position(new Point(1,2),"S"),"", max);
         //test
         Position result = mower.forward();
         //assert
         assertTrue((result.getCardinal()).equals("S"));
-        assertTrue(result.getX() == 1);
-        assertTrue(result.getY() == 1);
+        assertTrue(result.getSquare().getX() == 1);
+        assertTrue(result.getSquare().getY() == 1);
 
     }
 
     @Test
     public void forwardOutOfGrid()  {
         //set
-        Mower mower = new Mower(new Position(5,5,"N"),"F",surface);
+        Mower mower = new Mower(new Position(new Point(5,5),"N"),"", max);
         //test
         Position result = mower.forward();
         //assert
         assertTrue((result.getCardinal()).equals("N"));
-        assertTrue(result.getX() == 5);
-        assertTrue(result.getY() == 5);
+        assertTrue(result.getSquare().getX() == 5);
+        assertTrue(result.getSquare().getY() == 5);
     }
-*/
+
 }

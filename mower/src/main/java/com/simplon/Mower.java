@@ -6,8 +6,8 @@ import java.awt.*;
  * Created by alonso on 18/02/17.
  */
 public class Mower {
-    private static final int LEFT = -90;
-    private static final int RIGHT = 90;
+    protected static final int LEFT = -90;
+    protected static final int RIGHT = 90;
     private static Compass COMPASS = Compass.N;
 
     private Position position;
@@ -40,7 +40,7 @@ public class Mower {
     }
 
     public Position forward() {
-        Point newSquare = position.getSquare();
+        Point newSquare = (Point) position.getSquare().clone(); //sinon on modifie la position ...
         newSquare.translate(COMPASS.getMoveX(position.getCardinal()), COMPASS.getMoveY(position.getCardinal()));
         if (notOut(newSquare)) position.setSquare(newSquare);
         return position;

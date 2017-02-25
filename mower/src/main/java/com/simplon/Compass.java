@@ -19,9 +19,9 @@ public enum Compass{
         this.moveY = moveY;
     }
 
-    public String getCardinal(int degree){
+    public String getCardinal(int angle){
        for (Compass c : values()){
-           if (c.angle == degree){
+           if (c.angle == angle){
               return c.name();
            }
         }
