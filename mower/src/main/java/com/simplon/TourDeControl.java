@@ -1,5 +1,6 @@
 package com.simplon;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -29,7 +30,6 @@ public class TourDeControl {
             while ((line = fichier.readLine()) != null) {
                 if (i == 0 ) {
                     if (line.length() < 3) {
-
                         max = new Point(Integer.parseInt(line.substring(0, 1)), Integer.parseInt(line.substring(1, 2)));
                         i++;
                     } else {
@@ -41,7 +41,7 @@ public class TourDeControl {
                         int y = Integer.parseInt(line.substring(1,2));
                         if (x + y >= 0 &&  x<= max.getX() && y<=max.getY()) {
                             String cardinal = extractCardinal(line);
-                            if (cardinal !=null) {
+                             if (cardinal !=null) {
                                 position = new Position(new Point(x,y), cardinal);
                                 i++;
                             }
@@ -56,7 +56,6 @@ public class TourDeControl {
                         i++;
                     }
                 }
-
             fichier.close();
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,5 +1,7 @@
 package com.simplon;
 
+import java.awt.*;
+
 /**
  * Created by alonso on 18/02/17.
  */
@@ -26,6 +28,6 @@ public class Position {
 
     @Override
     public String toString() {
-        return  "(" +square.getX()+ ","+square.getY()+")" + cardinal;
+        return  "(" +(int) square.getX()+ ","+(int) square.getY()+")" + cardinal;
     }
 }

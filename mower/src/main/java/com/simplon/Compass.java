@@ -4,31 +4,32 @@ package com.simplon;
  * Created by alonso on 17/02/17.
  */
 public enum Compass{
-    N(0, new Point(0, 1)),
-    E(90, new Point(1, 0)),
-    S(180, new Point(0, -1)),
-    W(270, new Point(-1, 0));
+    N(0, 0, 1),
+    E(90, 1, 0),
+    S(180, 0, -1),
+    W(270, -1, 0);
 
-    private final int degree;
-    private Point point;
+    private final int angle;
+    private int moveX;
+    private int moveY;
 
-    Compass(int degree, Point point){
-        this.degree = degree;
-        this.point = point;
-     }
+    Compass(int angle, int moveX, int moveY){
+        this.angle = angle;
+        this.moveX = moveX;
+        this.moveY = moveY;
+    }
 
-    public String getName(int degree){
+    public String getCardinal(int degree){
        for (Compass c : values()){
-           if (c.degree == degree){
+           if (c.angle == degree){
               return c.name();
            }
         }
         return  null; // à voir
     }
 
-    public int getDegree(String cardinal){return ((valueOf(cardinal).degree+360));}
-
-    public Point getPoint(String cardinal) {return valueOf(cardinal).point;}
-
+    public int getAngle(String cardinal){return ((valueOf(cardinal).angle +360));}
+    public int getMoveX(String cardinal) {return valueOf(cardinal).moveX;}
+    public int getMoveY(String cardinal) {return valueOf(cardinal).moveY;}
 }
 
